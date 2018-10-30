@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    
+    <title>Neighborhood Map</title>
+	<meta charset="utf-8">
+    <!-- for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+  
+  </head>
+  <body>
+    <div class="container">
+      <div id="sidebar">
+        <h1>Filter location by name</h1>
+
+        <input class="form-control" id="myInput" name="filter" type="search" data-bind="textInput: query" placeholder="Search...">
+        <ul class="list-unstyled">
+              <ul class="collapse list-unstyled" data-bind="foreach: filteredPlaces" id="placesSubmenu">
+                <li id="subMenu"><a href="#" data-bind="text: title, click: $parent.listClick"></a></li>
+              </ul>
+        </ul>
+      </div>
+      <div id="map"></div>
+    </div>
+
+	<script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB3pMny47LfcuEONXWVdz5xIC9-928DN4&v=3&callback=initMap" async defer onerror="mapError()">
+    </script>
+   </body>
+</html>
